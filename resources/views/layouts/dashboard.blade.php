@@ -11,16 +11,18 @@
     @include('components.header')
     <div class="row">
         <aside class="col-lg-3">
-            <nav>
+            <nav class="container-fluid">
                 <ul>
                     <li>
-                        <a href="/posts">Posts</a>
+                        <a href="{{ route('posts.index') }}">Posts</a>
                     </li>
                 </ul>
             </nav>
         </aside>
         <main class="col-lg-9">
-            @yield('content')
+            <div class="container-fluid">
+                @yield('content')
+            </div>
         </main>
     </div>
     @include('components.footer')

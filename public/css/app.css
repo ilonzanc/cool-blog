@@ -6649,3 +6649,22 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
 }
+
+textarea {
+  min-height: 15rem;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+}
+
+.form-group {
+  margin-bottom: 2.4rem;
+}
+
+.form-error {
+  font-size: 1.4rem;
+  color: #dc3545;
+}
