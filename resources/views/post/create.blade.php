@@ -29,6 +29,6 @@
                 <span class="form-error">{{ $message }}</span>
             @enderror
         </div>
-        <button type="submit">Add</button>
+        <button class="btn" type="submit">Add</button>
     </form>
 @endsection

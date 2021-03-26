@@ -6648,15 +6648,58 @@ body {
   overflow: hidden;
   font-size: 1.6rem;
   line-height: 1.5;
+  letter-spacing: 0.05em;
+  color: #333436;
+  background: #F9F9F7;
+}
+
+h1,
+.h1 {
+  margin-bottom: 2.4rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  width: 15rem;
+  padding: 0.8rem 1.6rem;
+  text-align: center;
+  letter-spacing: 0.2em;
+  border: thin solid #333436;
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.btn:hover {
+  background-color: #333436;
+  color: #F9F9F7;
+}
+
+input,
+button,
+textarea {
+  background: none;
+  border: none;
 }
 
 textarea {
   min-height: 15rem;
 }
 
+label {
+  margin-bottom: 0.8rem;
+}
+
 .form-control {
   display: block;
   width: 100%;
+  border: thin solid #333436;
   padding: 0.6rem 0.8rem;
 }
 
@@ -6667,4 +6710,30 @@ textarea {
 .form-error {
   font-size: 1.4rem;
   color: #dc3545;
+}
+
+aside {
+  background-color: #333436;
+  color: #F9F9F7;
+}
+
+footer {
+  padding: 1.6rem 0;
+  font-size: 1.4rem;
+}
+
+header {
+  padding: 2.4rem 0;
+  border-bottom: thin solid #333436;
+}
+
+.pagination {
+  display: flex;
+  padding: 0;
+  margin: 0 -0.8rem;
+  list-style: none;
+}
+
+.page-item {
+  padding: 0 0.8rem;
 }

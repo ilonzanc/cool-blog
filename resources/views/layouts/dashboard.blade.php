@@ -10,7 +10,7 @@
 <body>
     @include('components.header')
     <div class="row">
-        <aside class="col-lg-3">
+        <aside class="col-lg-3 col-xl-2">
             <nav class="container-fluid">
                 <ul>
                     <li>
@@ -19,7 +19,7 @@
                 </ul>
             </nav>
         </aside>
-        <main class="col-lg-9">
+        <main class="col-lg-9 col-xl-10 py-4">
             <div class="container-fluid">
                 @yield('content')
             </div>

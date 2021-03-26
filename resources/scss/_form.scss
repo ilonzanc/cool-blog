@@ -1,10 +1,22 @@
+input,
+button,
+textarea {
+  background: none;
+  border: none;
+}
+
 textarea {
   min-height: 15rem;
+}
+
+label {
+  margin-bottom: 0.8rem;
 }
 
 .form-control {
   display: block;
   width: 100%;
+  border: thin solid $text-color;
   padding: 0.6rem 0.8rem;
 }
 

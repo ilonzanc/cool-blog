@@ -2,7 +2,12 @@
 
 
 @section('content')
-<a href="{{ route('posts.create') }}">New post</a>
+<div class="d-flex justify-content-end">
+    <a
+        href="{{ route('posts.create') }}"
+        class="btn"
+    >New post</a>
+</div>
 @forelse($posts as $post)
 <div class="mb-3">
     <h2>{{ $post->title }}</h2>
@@ -14,4 +19,5 @@
 @empty
 <p>No posts found</p>
 @endforelse
+{{ $posts->links() }}
 @endsection
