@@ -1,0 +1,5 @@
+{
+  "end_with_newline": true,
+  "wrap_attributes": "auto",
+  "wrap_line_length": 100
+}

@@ -2,22 +2,53 @@
 
 
 @section('content')
+<h1>Posts</h1>
 <div class="d-flex justify-content-end">
-    <a
-        href="{{ route('posts.create') }}"
-        class="btn"
-    >New post</a>
+    <a href="{{ route('posts.create') }}" class="btn">New post</a>
 </div>
-@forelse($posts as $post)
-<div class="mb-3">
-    <h2>{{ $post->title }}</h2>
-    <p>{{ $post->body }}</p>
-    <a href="{{ route('posts.show', $post) }}">View</a>
-    <a href="{{ route('posts.edit', $post) }}">Edit</a>
-    <hr>
+
+@if (count($posts))
+<table class="table--index">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Created at</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    @foreach($posts as $post)
+    <tr class="mb-3">
+        <td>{{ $post->title }}</td>
+        <td>{{ date('d/m/Y', strtotime($post->created_at)) }}</td>
+        <td>
+            <a href="{{ route('posts.show', $post) }}">View</a>
+            <a href="{{ route('posts.edit', $post) }}">Edit</a>
+            <button class="js-delete-row-btn" data-id="{{ $post->id }}"
+                type="button">Delete</button>
+        </td>
+    </tr>
+    @endforeach
+</table>
+<div class="modal js-modal">
+    <div class="modal__overlay js-modal-close"></div>
+    <div class="modal__body">
+        <p>Are you sure you want to delete this post?</p>
+        <div class="d-flex justify-content-center">
+            <form action="{{ route('posts.destroy', 0) }}" method="POST">
+                @method('DELETE')
+                @csrf
+                <button type="submit" class="btn btn--danger me-2">Delete</button>
+            </form>
+            <button type="button" class="btn js-modal-close ms-2">Cancel</button>
+        </div>
+        <button class="js-modal-close" type="button">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
 </div>
-@empty
-<p>No posts found</p>
-@endforelse
 {{ $posts->links() }}
+@else
+<p>No posts found</p>
+
+@endif
 @endsection

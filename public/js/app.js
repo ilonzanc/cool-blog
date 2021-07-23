@@ -7,7 +7,35 @@
   \*****************************/
 /***/ (() => {
 
-// require('./bootstrap');
+var init = function init() {
+  toggleDeleteModal();
+};
+
+var toggleDeleteModal = function toggleDeleteModal() {
+  var $deleteBtns = document.querySelectorAll('.js-delete-row-btn');
+  var $closeModalBtns = document.querySelectorAll('.js-modal-close');
+  var $modal = document.querySelector('.js-modal');
+  var $form = $modal.querySelector('form');
+  if (!$deleteBtns) return;
+  var deleteUrl = $form.getAttribute('action').split('/');
+  var lastSegment = deleteUrl.pop() || deleteUrl.pop(); // handle potential trailing slash
+
+  $deleteBtns.forEach(function ($deleteBtn) {
+    $deleteBtn.addEventListener('click', function (e) {
+      $modal.classList.add('open');
+      newUrl = deleteUrl.join('/') + '/' + e.currentTarget.dataset.id;
+      console.log(newUrl);
+      $form.setAttribute('action', newUrl);
+    });
+  });
+  $closeModalBtns.forEach(function ($closeModalBtn) {
+    $closeModalBtn.addEventListener('click', function (e) {
+      $modal.classList.remove('open');
+    });
+  });
+};
+
+init();
 
 /***/ }),
 

@@ -100,10 +100,11 @@ class PostController extends Controller
                 ->withInput();
         }
 
-        $post = Post::find($post);
+        $post = Post::find($post->id);
 
         $post->title = $request->title;
         $post->body = $request->body;
+
 
         $post->save();
         return redirect(route('posts.show', $post))->with('status', 'Post edited!');
@@ -117,6 +118,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        Post::destroy($post->id);
+
+        return redirect(route('posts.index'))->with('status', 'Post deleted!');
     }
 }
