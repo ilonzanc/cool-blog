@@ -1,4 +1,4 @@
-@extends('layouts.dashboard', ['title' => 'Post'])
+<x-dashboard-layout :title="$post->title"
 
 @section('content')
     <a href="{{ route('posts.index') }}">Back to overview</a>
@@ -18,4 +18,4 @@
         href="{{ route('posts.edit', $post) }}"
         class="btn"
     >Edit post</a>
-@endsection
+</x-dashboard-layout>

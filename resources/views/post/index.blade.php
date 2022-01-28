@@ -1,7 +1,4 @@
-@extends('layouts.dashboard', ['title' => 'Posts'])
-
-
-@section('content')
+<x-dashboard-layout title="Posts">
 <h1>Posts</h1>
 <div class="d-flex justify-content-end">
     <a href="{{ route('posts.create') }}" class="btn">New post</a>
@@ -51,4 +48,4 @@
 <p>No posts found</p>
 
 @endif
-@endsection
+</x-dashboard-layout>

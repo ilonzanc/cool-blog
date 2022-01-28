@@ -22,7 +22,7 @@
         </aside>
         <main class="col-lg-9 col-xl-10 py-4">
             <div class="container-fluid">
-                @yield('content')
+                {{ $slot }}
             </div>
         </main>
     </div>
