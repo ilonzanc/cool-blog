@@ -1,5 +1,28 @@
 #auth {
-  .logo {
-    width: 6rem;
+  .auth__container {
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    .auth__container {
+      max-width: 50rem;
+    }
+  }
+
+  .card {
+    position: relative;
+    border: 1rem solid $westar;
+    &::after {
+      position: absolute;
+      top: -2rem;
+      left: -2rem;
+      z-index: -1;
+
+      width: calc(100% + 4rem);
+      height: calc(100% + 4rem);
+
+      content: '';
+      background-color: $wafer;
+    }
   }
 }

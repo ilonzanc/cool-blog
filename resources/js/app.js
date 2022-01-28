@@ -7,6 +7,9 @@ const toggleDeleteModal = () => {
   const $closeModalBtns = document.querySelectorAll('.js-modal-close')
 
   const $modal = document.querySelector('.js-modal')
+
+  if (!$modal) return
+
   const $form = $modal.querySelector('form')
 
   if (!$deleteBtns) return
@@ -18,7 +21,6 @@ const toggleDeleteModal = () => {
     $deleteBtn.addEventListener('click', (e) => {
       $modal.classList.add('open')
       newUrl = deleteUrl.join('/') + '/' + e.currentTarget.dataset.id
-      console.log(newUrl)
       $form.setAttribute('action', newUrl)
     })
   })

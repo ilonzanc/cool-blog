@@ -10,7 +10,8 @@
   text-transform: uppercase;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $text-color;
     color: $desert-storm;
   }

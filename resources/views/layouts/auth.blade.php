@@ -18,7 +18,14 @@
     </head>
     <body id="auth">
         <main class="d-flex align-items-center justify-content-center">
-            {{ $slot }}
+            <div class="auth__container">
+                <a href="/" class="d-block text-center mb-4">
+                    <x-application-logo class="header__logo" />
+                </a>
+                <div class="card bg-white p-5">
+                    {{ $slot }}
+                </div>
+            </div>
         </main>
     </body>
 </html>
